@@ -1,0 +1,304 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+<title id="page-title">Product — Qlassique Wellness</title>
+<meta id="meta-description" name="description" content="Shop considered wellness and skincare rituals from Qlassique Wellness." />
+<meta name="robots" content="index,follow" />
+<meta name="theme-color" content="#1C3D33" />
+<link rel="canonical" href="https://www.qlassiquewellness.com/product.html" />
+<link rel="icon" href="favicon.png" type="image/png" />
+<link rel="apple-touch-icon" href="apple-touch-icon.png" />
+<link rel="manifest" href="site.webmanifest" />
+
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,400;0,500;0,600;1,400&family=Montserrat:wght@300;400;500;600&display=swap" rel="stylesheet">
+
+<style>
+  :root{
+    --forest:#1C3D33; --forest-2:#16302A; --sage:#6E8B74;
+    --cream:#F2EDE4; --cream-2:#EAE3D5; --gold:#C9A96E; --gold-2:#B6924F;
+    --charcoal:#2B2B2B; --ink:#4a4a46;
+    --serif: 'Cormorant Garamond', Georgia, 'Iowan Old Style', 'Palatino Linotype', Palatino, serif;
+    --sans: 'Montserrat', -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Helvetica, Arial, sans-serif;
+    --maxw: 1280px;
+  }
+  *,*::before,*::after{ box-sizing:border-box; margin:0; padding:0; }
+  html{ scroll-behavior:smooth; scroll-padding-top:96px; }
+  body{ background:var(--cream); color:var(--charcoal); font-family:var(--sans); font-weight:300; line-height:1.5; -webkit-font-smoothing:antialiased; overflow-x:hidden; }
+  img,svg{ display:block; max-width:100%; }
+  a{ color:inherit; text-decoration:none; }
+  ul{ list-style:none; }
+  button{ font:inherit; background:none; border:none; cursor:pointer; color:inherit; }
+  :focus-visible{ outline:3px solid var(--gold); outline-offset:4px; }
+  h1,h2,h3,h4,.serif{ font-family:var(--serif); font-weight:500; letter-spacing:.01em; }
+  .wrap{ max-width:var(--maxw); margin:0 auto; padding-inline:clamp(20px, 4vw, 40px); }
+  .eyebrow{ font-size:clamp(.64rem, .8vw, .7rem); letter-spacing:.28em; text-transform:uppercase; color:var(--gold-2); font-weight:600; }
+
+  .btn{ font-family:var(--sans); font-size:.76rem; letter-spacing:.14em; text-transform:uppercase; font-weight:500; min-height:48px; padding:14px 30px; border:1px solid transparent; display:inline-flex; align-items:center; justify-content:center; text-align:center; transition:transform .4s cubic-bezier(.22,1,.36,1), box-shadow .4s ease, background .4s ease, color .4s ease, border-color .4s ease; }
+  .btn-gold{ background:var(--gold-2); color:#1C1A14; border-color:var(--gold-2); }
+  .btn-gold:hover{ background:var(--gold); transform:translateY(-2px); box-shadow:0 14px 28px -12px rgba(182,146,79,.5); }
+  .btn-outline{ background:transparent; color:var(--forest); border-color:var(--forest); }
+  .btn-outline:hover{ background:var(--forest); color:var(--cream); }
+  .btn-primary{ background:var(--forest); color:var(--cream); border-color:var(--forest); }
+  .btn-primary:hover{ background:var(--forest-2); transform:translateY(-2px); box-shadow:0 14px 28px -12px rgba(28,61,51,.45); }
+  .btn[disabled],.btn.is-disabled{ opacity:.45; cursor:not-allowed; pointer-events:none; }
+  .btn-full{ width:100%; }
+
+  .section{ padding-block:clamp(72px, 10vw, 140px); }
+
+  /* ---------- nav (shared) ---------- */
+  #site-nav{ position:fixed; top:0; left:0; right:0; z-index:100; padding:26px 0; background:rgba(242,237,228,.94); -webkit-backdrop-filter:blur(10px); backdrop-filter:blur(10px); box-shadow:0 8px 30px -18px rgba(43,43,43,.28); }
+  .nav-inner{ display:flex; align-items:center; justify-content:space-between; gap:20px; }
+  .brand{ display:flex; align-items:center; gap:10px; }
+  .brand-mark{ width:36px; height:36px; object-fit:contain; }
+  .brand-word{ font-family:var(--serif); font-size:1.4rem; color:var(--forest); white-space:nowrap; }
+  .brand-word em{ color:var(--gold-2); font-style:normal; }
+  .nav-links{ display:none; align-items:center; gap:22px; }
+  .nav-link{ font-size:.72rem; letter-spacing:.12em; text-transform:uppercase; color:var(--forest); font-weight:500; position:relative; padding-bottom:4px; white-space:nowrap; }
+  .nav-link::after{ content:''; position:absolute; left:0; bottom:0; width:0; height:1px; background:var(--gold); transition:width .35s ease; }
+  .nav-link:hover::after,.nav-link[aria-current="page"]::after{ width:100%; }
+  .nav-cta{ display:none; }
+  .menu-btn{ display:flex; }
+  @media (min-width:1024px){ .nav-links{ display:flex; } .nav-cta{ display:inline-block; padding:13px 24px; font-size:.68rem; } .menu-btn{ display:none; } }
+  .mobile-menu{ position:absolute; left:16px; right:16px; top:100%; margin-top:8px; background:var(--cream); box-shadow:0 24px 50px -20px rgba(43,43,43,.35); transform:translateY(-14px); opacity:0; pointer-events:none; transition:opacity .35s ease, transform .35s ease; }
+  .mobile-menu.open{ transform:translateY(0); opacity:1; pointer-events:auto; }
+  .mobile-menu ul{ display:flex; flex-direction:column; gap:10px; padding:24px; }
+  .mobile-menu .nav-link{ display:flex; align-items:center; min-height:44px; }
+  .mobile-menu .btn{ text-align:center; margin-top:6px; }
+
+  .breadcrumb{ padding-top:clamp(150px, 20vw, 200px); }
+  .breadcrumb a{ font-size:.72rem; letter-spacing:.12em; text-transform:uppercase; color:var(--forest); border-bottom:1px solid var(--gold); padding-bottom:3px; }
+
+  /* ---------- product detail ---------- */
+  .pd-grid{ display:grid; gap:56px; margin-top:36px; }
+  @media (min-width:900px){ .pd-grid{ grid-template-columns:1fr 1fr; gap:80px; align-items:start; } }
+  .pd-shot{ position:relative; aspect-ratio:4/5; display:flex; align-items:center; justify-content:center; overflow:hidden; background:linear-gradient(150deg, #6E8B74 0%, #566F5C 100%); }
+  .pd-shot.cat-wellness{ background:linear-gradient(160deg, #1C3D33 0%, #16302A 70%, #12251F 100%); }
+  .pd-shot img{ width:100%; height:100%; object-fit:contain; padding:32px; }
+  .pd-shot .placeholder-mark{ font-family:var(--serif); font-size:4rem; color:rgba(242,237,228,.5); }
+
+  .pd-tag{ font-size:.7rem; letter-spacing:.16em; text-transform:uppercase; color:var(--gold-2); }
+  .pd-title{ font-size:clamp(1.9rem, 3.4vw, 2.6rem); margin-top:12px; color:var(--forest); line-height:1.15; }
+  .pd-meta{ margin-top:14px; display:flex; flex-wrap:wrap; gap:14px; font-size:.85rem; color:#6a6a63; }
+  .pd-price{ margin-top:18px; font-size:1.3rem; font-weight:500; color:var(--charcoal); }
+  .pd-short{ margin-top:20px; font-size:.98rem; line-height:1.8; font-weight:300; color:var(--ink); }
+  .pd-buy{ margin-top:32px; display:flex; flex-wrap:wrap; gap:16px; }
+
+  .pd-info{ margin-top:80px; border-top:1px solid rgba(28,61,51,.14); padding-top:48px; }
+  .pd-info-block + .pd-info-block{ margin-top:36px; }
+  .pd-info-block h2{ font-size:1.3rem; color:var(--forest); }
+  .pd-info-block p{ margin-top:12px; font-size:.92rem; line-height:1.8; font-weight:300; color:var(--ink); max-width:70ch; }
+
+  .pd-not-found{ text-align:center; padding-top:clamp(160px, 22vw, 220px); padding-bottom:120px; }
+  .pd-not-found h1{ font-size:clamp(2rem, 4vw, 2.6rem); color:var(--forest); }
+  .pd-not-found p{ margin-top:16px; color:var(--ink); }
+  .pd-not-found .btn{ margin-top:32px; }
+
+  footer{ background:var(--cream-2); padding-top:80px; padding-bottom:40px; }
+  .foot-grid{ display:grid; gap:48px; }
+  @media (min-width:640px){ .foot-grid{ grid-template-columns:1fr 1fr; } }
+  @media (min-width:1024px){ .foot-grid{ grid-template-columns:2fr 1fr 1fr 1fr; } }
+  .foot-brand p{ margin-top:20px; font-size:.85rem; font-weight:300; line-height:1.7; max-width:280px; color:var(--ink); }
+  .footer-logo{ width:170px; height:auto; object-fit:contain; }
+  .foot-col h4{ font-size:.7rem; letter-spacing:.18em; text-transform:uppercase; color:var(--forest); }
+  .foot-col ul{ margin-top:20px; display:flex; flex-direction:column; gap:12px; }
+  .foot-col ul a,.foot-col ul li{ font-size:.85rem; font-weight:300; color:var(--ink); }
+  .foot-bottom{ margin-top:64px; padding-top:32px; border-top:1px solid rgba(28,61,51,.18); display:flex; flex-wrap:wrap; gap:16px; justify-content:space-between; }
+  .foot-bottom p{ font-size:.72rem; font-weight:300; color:var(--ink); }
+
+  #wa-float{ position:fixed; right:24px; bottom:24px; z-index:90; width:56px; height:56px; border-radius:99px; background:var(--forest); display:flex; align-items:center; justify-content:center; box-shadow:0 16px 34px -12px rgba(28,61,51,.55); transition:transform .35s ease; }
+  #wa-float:hover{ transform:scale(1.08); }
+  .skip-link{ position:fixed; z-index:200; top:12px; left:12px; padding:12px 16px; background:var(--cream); color:var(--forest); transform:translateY(-160%); transition:transform .2s ease; }
+  .skip-link:focus{ transform:translateY(0); }
+
+  @media (max-width:639px){ .brand-word{ font-size:1.2rem; } .pd-buy .btn{ width:100%; } }
+  @media (prefers-reduced-motion: reduce){ html{ scroll-behavior:auto; } *,*::before,*::after{ animation-duration:.01ms !important; animation-iteration-count:1 !important; transition-duration:.01ms !important; scroll-behavior:auto !important; } }
+  ::selection{ background:var(--gold); color:var(--forest-2); }
+</style>
+</head>
+<body>
+<a class="skip-link" href="#main-content">Skip to content</a>
+
+<nav id="site-nav" aria-label="Primary navigation">
+  <div class="wrap nav-inner">
+    <a href="index.html#home" class="brand">
+      <img class="brand-mark" src="qlassique-icon.png" width="1100" height="1100" alt="Qlassique Wellness logo mark" />
+      <span class="brand-word">Qlassique <em>Wellness</em></span>
+    </a>
+    <div class="nav-links">
+      <a href="index.html#about" class="nav-link">About</a>
+      <a href="index.html#services" class="nav-link">Services</a>
+      <a href="shop.html" class="nav-link" aria-current="page">Shop</a>
+      <a href="index.html#programs" class="nav-link">Programs</a>
+      <a href="index.html#knowledge" class="nav-link">Knowledge Hub</a>
+      <a href="index.html#faq" class="nav-link">FAQ</a>
+      <a href="index.html#contact" class="nav-link">Contact</a>
+    </div>
+    <a href="index.html#contact" class="btn btn-primary nav-cta">Book Consultation</a>
+    <button class="menu-btn" id="menu-btn" type="button" aria-label="Open menu" aria-controls="mobile-menu" aria-expanded="false">
+      <svg width="24" height="24" viewBox="0 0 26 26" fill="none"><path d="M4 8H22M4 13H22M4 18H22" stroke="#1C3D33" stroke-width="1.4" stroke-linecap="round"/></svg>
+    </button>
+    <div class="mobile-menu" id="mobile-menu" aria-hidden="true">
+      <ul>
+        <li><a href="index.html#about" class="nav-link">About</a></li>
+        <li><a href="index.html#services" class="nav-link">Services</a></li>
+        <li><a href="shop.html" class="nav-link" aria-current="page">Shop</a></li>
+        <li><a href="index.html#programs" class="nav-link">Programs</a></li>
+        <li><a href="index.html#knowledge" class="nav-link">Knowledge Hub</a></li>
+        <li><a href="index.html#faq" class="nav-link">FAQ</a></li>
+        <li><a href="index.html#contact" class="nav-link">Contact</a></li>
+        <li><a href="index.html#contact" class="btn btn-primary">Book Consultation</a></li>
+      </ul>
+    </div>
+  </div>
+</nav>
+
+<main id="main-content">
+  <div id="pd-not-found" class="pd-not-found wrap" hidden>
+    <p class="eyebrow">Shop</p>
+    <h1>We couldn't find that product.</h1>
+    <p>It may have been renamed or is no longer available.</p>
+    <a class="btn btn-outline" href="shop.html">← Back to Shop</a>
+  </div>
+
+  <div id="pd-content" hidden>
+    <div class="breadcrumb wrap">
+      <a href="shop.html">← Back to Shop</a>
+    </div>
+
+    <section class="section" style="padding-top:24px;">
+      <div class="wrap pd-grid">
+        <div id="pd-shot" class="pd-shot"></div>
+        <div>
+          <p class="pd-tag" id="pd-tag"></p>
+          <h1 class="pd-title" id="pd-title"></h1>
+          <div class="pd-meta" id="pd-meta"></div>
+          <p class="pd-price" id="pd-price"></p>
+          <p class="pd-short" id="pd-short"></p>
+          <div class="pd-buy" id="pd-buy"></div>
+        </div>
+      </div>
+
+      <div class="wrap pd-info" id="pd-info"></div>
+    </section>
+  </div>
+</main>
+
+<footer>
+  <div class="wrap">
+    <div class="foot-grid">
+      <div class="foot-brand">
+        <img class="footer-logo" src="qlassique-primary-logo.png" width="1120" height="1120" loading="lazy" decoding="async" alt="Qlassique Wellness — Wellness With Purpose" />
+        <p>Wellness With Purpose. Holistic health, delivered through trusted products, education, and personalised care.</p>
+      </div>
+      <div class="foot-col">
+        <h4>Explore</h4>
+        <ul><li><a href="index.html#about">About</a></li><li><a href="index.html#services">Services</a></li><li><a href="shop.html">Shop</a></li><li><a href="index.html#programs">Programs</a></li></ul>
+      </div>
+      <div class="foot-col">
+        <h4>Company</h4>
+        <ul><li><a href="index.html#knowledge">Knowledge Hub</a></li><li><a href="index.html#faq">FAQ</a></li><li><a href="index.html#contact">Contact</a></li></ul>
+      </div>
+      <div class="foot-col">
+        <h4>Contact</h4>
+        <ul><li><a href="mailto:hello@qlassiquewellness.com">hello@qlassiquewellness.com</a></li><li><a href="tel:+6580000000">+65 8000 0000</a></li></ul>
+      </div>
+    </div>
+    <div class="foot-bottom">
+      <p>© 2026 Qlassique Wellness. All rights reserved.</p>
+      <p>Privacy Policy · Terms of Service</p>
+    </div>
+  </div>
+</footer>
+
+<a id="wa-float" href="index.html#contact" aria-label="Contact Qlassique Wellness">
+  <svg width="26" height="26" viewBox="0 0 24 24" fill="#F2EDE4"><path d="M12 2a10 10 0 00-8.6 15L2 22l5.2-1.4A10 10 0 1012 2zm5.6 14.3c-.24.68-1.4 1.3-1.9 1.35-.5.06-1.02.28-3.5-.73-2.94-1.2-4.8-4.2-4.95-4.4-.14-.2-1.18-1.57-1.18-3s.76-2.1 1.03-2.4c.26-.28.58-.35.77-.35h.55c.18 0 .43-.06.66.5.24.58.82 2 .9 2.14.06.14.1.3.02.5-.08.2-.12.3-.24.46-.12.16-.26.35-.37.47-.12.13-.25.27-.1.53.14.26.62 1.02 1.34 1.66.92.82 1.7 1.08 1.96 1.2.26.12.4.1.55-.06.15-.17.63-.73.8-.98.16-.25.33-.2.55-.12.22.08 1.4.66 1.64.78.24.12.4.18.46.28.06.1.06.6-.18 1.28z"/></svg>
+</a>
+
+<script src="products-data.js"></script>
+<script>
+  var menuBtn = document.getElementById('menu-btn');
+  var mobileMenu = document.getElementById('mobile-menu');
+  menuBtn.addEventListener('click', function(){
+    var open = mobileMenu.classList.toggle('open');
+    menuBtn.setAttribute('aria-expanded', open);
+    menuBtn.setAttribute('aria-label', open ? 'Close menu' : 'Open menu');
+    mobileMenu.setAttribute('aria-hidden', !open);
+  });
+  document.addEventListener('keydown', function(event){
+    if (event.key === 'Escape' && mobileMenu.classList.contains('open')){
+      mobileMenu.classList.remove('open');
+      mobileMenu.setAttribute('aria-hidden', 'true');
+      menuBtn.setAttribute('aria-expanded', 'false');
+      menuBtn.setAttribute('aria-label', 'Open menu');
+      menuBtn.focus();
+    }
+  });
+  mobileMenu.querySelectorAll('a').forEach(function(a){
+    a.addEventListener('click', function(){
+      mobileMenu.classList.remove('open');
+      mobileMenu.setAttribute('aria-hidden', 'true');
+      menuBtn.setAttribute('aria-expanded', 'false');
+      menuBtn.setAttribute('aria-label', 'Open menu');
+    });
+  });
+
+  function renderProduct(){
+    var params = new URLSearchParams(window.location.search);
+    var slug = params.get('slug');
+    var product = slug ? qlGetProduct(slug) : null;
+
+    if (!product){
+      document.getElementById('pd-not-found').hidden = false;
+      return;
+    }
+
+    document.getElementById('pd-content').hidden = false;
+    document.title = product.name + ' — Qlassique Wellness';
+    document.getElementById('page-title').textContent = product.name + ' — Qlassique Wellness';
+    var metaDesc = product.shortDescription || ('Shop ' + product.name + ' from Qlassique Wellness.');
+    document.getElementById('meta-description').setAttribute('content', metaDesc);
+
+    var shot = document.getElementById('pd-shot');
+    shot.classList.toggle('cat-wellness', product.category === 'Wellness');
+    if (product.image){
+      shot.innerHTML = '<img src="' + product.image + '" alt="' + product.name + '" decoding="async" />';
+    } else {
+      shot.innerHTML = '<span class="placeholder-mark" aria-hidden="true">Q</span>';
+    }
+
+    document.getElementById('pd-tag').textContent = product.category;
+    document.getElementById('pd-title').textContent = product.name;
+
+    var meta = document.getElementById('pd-meta');
+    meta.innerHTML = product.size ? '<span>' + product.size + '</span>' : '';
+
+    document.getElementById('pd-price').textContent = qlFormatPrice(product);
+    document.getElementById('pd-short').textContent = product.shortDescription || 'Product description coming soon.';
+
+    var buy = document.getElementById('pd-buy');
+    if (qlHasStripeLink(product)){
+      buy.innerHTML = '<a class="btn btn-gold btn-full" href="' + product.stripePaymentLink + '">Buy Now</a>';
+    } else {
+      buy.innerHTML = '<span class="btn btn-gold btn-full is-disabled" aria-disabled="true">Coming Soon</span>';
+    }
+
+    var infoBlocks = [];
+    if (product.description) infoBlocks.push(['Product Information', product.description]);
+    if (product.direction) infoBlocks.push(['Direction', product.direction]);
+    if (product.additionalInfo) infoBlocks.push(['Additional Information', product.additionalInfo]);
+
+    var info = document.getElementById('pd-info');
+    if (infoBlocks.length){
+      info.innerHTML = infoBlocks.map(function(block){
+        return '<div class="pd-info-block"><h2>' + block[0] + '</h2><p>' + block[1] + '</p></div>';
+      }).join('');
+    }
+  }
+  renderProduct();
+</script>
+</body>
+</html>

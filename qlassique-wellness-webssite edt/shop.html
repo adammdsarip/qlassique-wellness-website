@@ -1,0 +1,296 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+<title>Shop — Qlassique Wellness</title>
+<meta name="description" content="Considered wellness and skincare rituals from Qlassique Wellness — shop products and check out securely with Stripe." />
+<meta name="robots" content="index,follow" />
+<meta name="theme-color" content="#1C3D33" />
+<meta name="application-name" content="Qlassique Wellness" />
+<link rel="canonical" href="https://www.qlassiquewellness.com/shop.html" />
+<meta property="og:type" content="website" />
+<meta property="og:site_name" content="Qlassique Wellness" />
+<meta property="og:title" content="Shop — Qlassique Wellness" />
+<meta property="og:description" content="Considered wellness and skincare rituals from Qlassique Wellness." />
+<meta property="og:url" content="https://www.qlassiquewellness.com/shop.html" />
+<link rel="icon" href="favicon.png" type="image/png" />
+<link rel="apple-touch-icon" href="apple-touch-icon.png" />
+<link rel="manifest" href="site.webmanifest" />
+
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,400;0,500;0,600;1,400&family=Montserrat:wght@300;400;500;600&display=swap" rel="stylesheet">
+
+<style>
+  :root{
+    --forest:#1C3D33; --forest-2:#16302A; --sage:#6E8B74;
+    --cream:#F2EDE4; --cream-2:#EAE3D5; --gold:#C9A96E; --gold-2:#B6924F;
+    --charcoal:#2B2B2B; --ink:#4a4a46;
+    --serif: 'Cormorant Garamond', Georgia, 'Iowan Old Style', 'Palatino Linotype', Palatino, serif;
+    --sans: 'Montserrat', -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Helvetica, Arial, sans-serif;
+    --maxw: 1280px;
+  }
+  *,*::before,*::after{ box-sizing:border-box; margin:0; padding:0; }
+  html{ scroll-behavior:smooth; scroll-padding-top:96px; }
+  body{ background:var(--cream); color:var(--charcoal); font-family:var(--sans); font-weight:300; line-height:1.5; -webkit-font-smoothing:antialiased; overflow-x:hidden; }
+  img,svg{ display:block; max-width:100%; }
+  a{ color:inherit; text-decoration:none; }
+  ul{ list-style:none; }
+  button{ font:inherit; background:none; border:none; cursor:pointer; color:inherit; }
+  :focus-visible{ outline:3px solid var(--gold); outline-offset:4px; }
+  h1,h2,h3,h4,.serif{ font-family:var(--serif); font-weight:500; letter-spacing:.01em; }
+  .wrap{ max-width:var(--maxw); margin:0 auto; padding-inline:clamp(20px, 4vw, 40px); }
+  .eyebrow{ font-size:clamp(.64rem, .8vw, .7rem); letter-spacing:.28em; text-transform:uppercase; color:var(--gold-2); font-weight:600; }
+
+  .btn{ font-family:var(--sans); font-size:.76rem; letter-spacing:.14em; text-transform:uppercase; font-weight:500; min-height:48px; padding:14px 30px; border:1px solid transparent; display:inline-flex; align-items:center; justify-content:center; text-align:center; transition:transform .4s cubic-bezier(.22,1,.36,1), box-shadow .4s ease, background .4s ease, color .4s ease, border-color .4s ease; }
+  .btn-primary{ background:var(--forest); color:var(--cream); border-color:var(--forest); }
+  .btn-primary:hover{ background:var(--forest-2); transform:translateY(-2px); box-shadow:0 14px 28px -12px rgba(28,61,51,.45); }
+  .btn-gold{ background:var(--gold-2); color:#1C1A14; border-color:var(--gold-2); }
+  .btn-gold:hover{ background:var(--gold); transform:translateY(-2px); box-shadow:0 14px 28px -12px rgba(182,146,79,.5); }
+  .btn-outline{ background:transparent; color:var(--forest); border-color:var(--forest); }
+  .btn-outline:hover{ background:var(--forest); color:var(--cream); }
+  .btn[disabled],.btn.is-disabled{ opacity:.45; cursor:not-allowed; pointer-events:none; }
+  .btn-row{ display:flex; flex-wrap:wrap; gap:16px; }
+  .btn-sm{ min-height:42px; padding:11px 22px; font-size:.7rem; }
+
+  .section{ padding-block:clamp(72px, 10vw, 140px); }
+  .section-head{ text-align:center; max-width:640px; margin:0 auto; }
+  .section-title{ font-size:clamp(2.15rem, 5vw, 3rem); margin-top:16px; line-height:1.14; color:var(--forest); }
+
+  /* ---------- nav (shared) ---------- */
+  #site-nav{ position:fixed; top:0; left:0; right:0; z-index:100; padding:26px 0; background:rgba(242,237,228,.94); -webkit-backdrop-filter:blur(10px); backdrop-filter:blur(10px); box-shadow:0 8px 30px -18px rgba(43,43,43,.28); }
+  .nav-inner{ display:flex; align-items:center; justify-content:space-between; gap:20px; }
+  .brand{ display:flex; align-items:center; gap:10px; }
+  .brand-mark{ width:36px; height:36px; object-fit:contain; }
+  .brand-word{ font-family:var(--serif); font-size:1.4rem; color:var(--forest); white-space:nowrap; }
+  .brand-word em{ color:var(--gold-2); font-style:normal; }
+  .nav-links{ display:none; align-items:center; gap:22px; }
+  .nav-link{ font-size:.72rem; letter-spacing:.12em; text-transform:uppercase; color:var(--forest); font-weight:500; position:relative; padding-bottom:4px; white-space:nowrap; }
+  .nav-link::after{ content:''; position:absolute; left:0; bottom:0; width:0; height:1px; background:var(--gold); transition:width .35s ease; }
+  .nav-link:hover::after,.nav-link[aria-current="page"]::after{ width:100%; }
+  .nav-cta{ display:none; }
+  .menu-btn{ display:flex; }
+  @media (min-width:1024px){ .nav-links{ display:flex; } .nav-cta{ display:inline-block; padding:13px 24px; font-size:.68rem; } .menu-btn{ display:none; } }
+  .mobile-menu{ position:absolute; left:16px; right:16px; top:100%; margin-top:8px; background:var(--cream); box-shadow:0 24px 50px -20px rgba(43,43,43,.35); transform:translateY(-14px); opacity:0; pointer-events:none; transition:opacity .35s ease, transform .35s ease; }
+  .mobile-menu.open{ transform:translateY(0); opacity:1; pointer-events:auto; }
+  .mobile-menu ul{ display:flex; flex-direction:column; gap:10px; padding:24px; }
+  .mobile-menu .nav-link{ display:flex; align-items:center; min-height:44px; }
+  .mobile-menu .btn{ text-align:center; margin-top:6px; }
+
+  .reveal{ opacity:0; transform:translateY(28px); transition:opacity 1s cubic-bezier(.22,1,.36,1), transform 1s cubic-bezier(.22,1,.36,1); }
+  .reveal.in{ opacity:1; transform:translateY(0); }
+  .d1{ transition-delay:.12s; } .d2{ transition-delay:.24s; }
+  @media (prefers-reduced-motion: reduce){ .reveal{ transition:none !important; opacity:1 !important; transform:none !important; } }
+
+  /* ---------- page intro ---------- */
+  .shop-hero{ padding-top:clamp(150px, 20vw, 200px); padding-bottom:16px; }
+
+  /* ---------- shop grid ---------- */
+  .shop-grid{ display:grid; gap:28px; margin-top:56px; grid-template-columns:1fr; }
+  @media (min-width:480px){ .shop-grid{ grid-template-columns:repeat(2,1fr); } }
+  @media (min-width:1024px){ .shop-grid{ grid-template-columns:repeat(3,1fr); gap:36px; } }
+
+  .shop-card{ display:flex; flex-direction:column; background:var(--cream); border:1px solid rgba(28,61,51,.12); transition:transform .5s cubic-bezier(.22,1,.36,1), box-shadow .5s ease, border-color .5s ease; }
+  @media (hover:hover){ .shop-card:hover{ transform:translateY(-6px); box-shadow:0 30px 60px -32px rgba(28,61,51,.32); border-color:rgba(28,61,51,.2); } }
+  .shop-shot{ position:relative; aspect-ratio:4/5; display:flex; align-items:center; justify-content:center; overflow:hidden; background:linear-gradient(150deg, #6E8B74 0%, #566F5C 100%); }
+  .shop-shot.cat-wellness{ background:linear-gradient(160deg, #1C3D33 0%, #16302A 70%, #12251F 100%); }
+  .shop-shot img{ width:100%; height:100%; object-fit:contain; padding:18px; transition:transform .8s cubic-bezier(.22,1,.36,1); }
+  @media (hover:hover){ .shop-card:hover .shop-shot img{ transform:scale(1.04); } }
+  .shop-shot .placeholder-mark{ font-family:var(--serif); font-size:2.6rem; color:rgba(242,237,228,.5); }
+
+  .shop-info{ padding:24px clamp(20px,3vw,26px) 26px; display:flex; flex-direction:column; flex:1; gap:0; }
+  .shop-tag{ font-size:.66rem; letter-spacing:.16em; text-transform:uppercase; color:var(--gold-2); }
+  .shop-info h3{ font-size:1.25rem; margin-top:8px; color:var(--forest); line-height:1.3; }
+  .shop-size{ margin-top:4px; font-size:.78rem; color:#6a6a63; }
+  .shop-price{ margin-top:10px; font-size:.92rem; font-weight:500; color:var(--charcoal); }
+  .shop-desc{ margin-top:12px; font-size:.85rem; line-height:1.65; font-weight:300; color:var(--ink); flex:1; display:-webkit-box; -webkit-line-clamp:3; -webkit-box-orient:vertical; overflow:hidden; }
+  .shop-actions{ margin-top:20px; display:flex; flex-wrap:wrap; gap:10px; }
+  .shop-actions .btn{ flex:1; }
+
+  footer{ background:var(--cream-2); padding-top:80px; padding-bottom:40px; }
+  .foot-grid{ display:grid; gap:48px; }
+  @media (min-width:640px){ .foot-grid{ grid-template-columns:1fr 1fr; } }
+  @media (min-width:1024px){ .foot-grid{ grid-template-columns:2fr 1fr 1fr 1fr; } }
+  .foot-brand p{ margin-top:20px; font-size:.85rem; font-weight:300; line-height:1.7; max-width:280px; color:var(--ink); }
+  .footer-logo{ width:170px; height:auto; object-fit:contain; }
+  .foot-col h4{ font-size:.7rem; letter-spacing:.18em; text-transform:uppercase; color:var(--forest); }
+  .foot-col ul{ margin-top:20px; display:flex; flex-direction:column; gap:12px; }
+  .foot-col ul a,.foot-col ul li{ font-size:.85rem; font-weight:300; color:var(--ink); }
+  .foot-bottom{ margin-top:64px; padding-top:32px; border-top:1px solid rgba(28,61,51,.18); display:flex; flex-wrap:wrap; gap:16px; justify-content:space-between; }
+  .foot-bottom p{ font-size:.72rem; font-weight:300; color:var(--ink); }
+
+  #wa-float{ position:fixed; right:24px; bottom:24px; z-index:90; width:56px; height:56px; border-radius:99px; background:var(--forest); display:flex; align-items:center; justify-content:center; box-shadow:0 16px 34px -12px rgba(28,61,51,.55); transition:transform .35s ease; }
+  #wa-float:hover{ transform:scale(1.08); }
+  .skip-link{ position:fixed; z-index:200; top:12px; left:12px; padding:12px 16px; background:var(--cream); color:var(--forest); transform:translateY(-160%); transition:transform .2s ease; }
+  .skip-link:focus{ transform:translateY(0); }
+
+  @media (max-width:639px){ .brand-word{ font-size:1.2rem; } }
+  @media (prefers-reduced-motion: reduce){ html{ scroll-behavior:auto; } *,*::before,*::after{ animation-duration:.01ms !important; animation-iteration-count:1 !important; transition-duration:.01ms !important; scroll-behavior:auto !important; } }
+  ::selection{ background:var(--gold); color:var(--forest-2); }
+</style>
+</head>
+<body>
+<a class="skip-link" href="#main-content">Skip to content</a>
+
+<nav id="site-nav" aria-label="Primary navigation">
+  <div class="wrap nav-inner">
+    <a href="index.html#home" class="brand">
+      <img class="brand-mark" src="qlassique-icon.png" width="1100" height="1100" alt="Qlassique Wellness logo mark" />
+      <span class="brand-word">Qlassique <em>Wellness</em></span>
+    </a>
+    <div class="nav-links">
+      <a href="index.html#about" class="nav-link">About</a>
+      <a href="index.html#services" class="nav-link">Services</a>
+      <a href="shop.html" class="nav-link" aria-current="page">Shop</a>
+      <a href="index.html#programs" class="nav-link">Programs</a>
+      <a href="index.html#knowledge" class="nav-link">Knowledge Hub</a>
+      <a href="index.html#faq" class="nav-link">FAQ</a>
+      <a href="index.html#contact" class="nav-link">Contact</a>
+    </div>
+    <a href="index.html#contact" class="btn btn-primary nav-cta">Book Consultation</a>
+    <button class="menu-btn" id="menu-btn" type="button" aria-label="Open menu" aria-controls="mobile-menu" aria-expanded="false">
+      <svg width="24" height="24" viewBox="0 0 26 26" fill="none"><path d="M4 8H22M4 13H22M4 18H22" stroke="#1C3D33" stroke-width="1.4" stroke-linecap="round"/></svg>
+    </button>
+    <div class="mobile-menu" id="mobile-menu" aria-hidden="true">
+      <ul>
+        <li><a href="index.html#about" class="nav-link">About</a></li>
+        <li><a href="index.html#services" class="nav-link">Services</a></li>
+        <li><a href="shop.html" class="nav-link" aria-current="page">Shop</a></li>
+        <li><a href="index.html#programs" class="nav-link">Programs</a></li>
+        <li><a href="index.html#knowledge" class="nav-link">Knowledge Hub</a></li>
+        <li><a href="index.html#faq" class="nav-link">FAQ</a></li>
+        <li><a href="index.html#contact" class="nav-link">Contact</a></li>
+        <li><a href="index.html#contact" class="btn btn-primary">Book Consultation</a></li>
+      </ul>
+    </div>
+  </div>
+</nav>
+
+<main id="main-content">
+  <section class="shop-hero section">
+    <div class="wrap section-head">
+      <p class="eyebrow reveal in">Shop</p>
+      <h1 class="section-title reveal in d1">Considered rituals, for a steadier you.</h1>
+    </div>
+  </section>
+
+  <section class="section" style="padding-top:0;">
+    <div class="wrap">
+      <div id="shop-grid" class="shop-grid" aria-live="polite"></div>
+    </div>
+  </section>
+</main>
+
+<footer>
+  <div class="wrap">
+    <div class="foot-grid">
+      <div class="foot-brand">
+        <img class="footer-logo" src="qlassique-primary-logo.png" width="1120" height="1120" loading="lazy" decoding="async" alt="Qlassique Wellness — Wellness With Purpose" />
+        <p>Wellness With Purpose. Holistic health, delivered through trusted products, education, and personalised care.</p>
+      </div>
+      <div class="foot-col">
+        <h4>Explore</h4>
+        <ul><li><a href="index.html#about">About</a></li><li><a href="index.html#services">Services</a></li><li><a href="shop.html">Shop</a></li><li><a href="index.html#programs">Programs</a></li></ul>
+      </div>
+      <div class="foot-col">
+        <h4>Company</h4>
+        <ul><li><a href="index.html#knowledge">Knowledge Hub</a></li><li><a href="index.html#faq">FAQ</a></li><li><a href="index.html#contact">Contact</a></li></ul>
+      </div>
+      <div class="foot-col">
+        <h4>Contact</h4>
+        <ul><li><a href="mailto:hello@qlassiquewellness.com">hello@qlassiquewellness.com</a></li><li><a href="tel:+6580000000">+65 8000 0000</a></li></ul>
+      </div>
+    </div>
+    <div class="foot-bottom">
+      <p>© 2026 Qlassique Wellness. All rights reserved.</p>
+      <p>Privacy Policy · Terms of Service</p>
+    </div>
+  </div>
+</footer>
+
+<a id="wa-float" href="index.html#contact" aria-label="Contact Qlassique Wellness">
+  <svg width="26" height="26" viewBox="0 0 24 24" fill="#F2EDE4"><path d="M12 2a10 10 0 00-8.6 15L2 22l5.2-1.4A10 10 0 1012 2zm5.6 14.3c-.24.68-1.4 1.3-1.9 1.35-.5.06-1.02.28-3.5-.73-2.94-1.2-4.8-4.2-4.95-4.4-.14-.2-1.18-1.57-1.18-3s.76-2.1 1.03-2.4c.26-.28.58-.35.77-.35h.55c.18 0 .43-.06.66.5.24.58.82 2 .9 2.14.06.14.1.3.02.5-.08.2-.12.3-.24.46-.12.16-.26.35-.37.47-.12.13-.25.27-.1.53.14.26.62 1.02 1.34 1.66.92.82 1.7 1.08 1.96 1.2.26.12.4.1.55-.06.15-.17.63-.73.8-.98.16-.25.33-.2.55-.12.22.08 1.4.66 1.64.78.24.12.4.18.46.28.06.1.06.6-.18 1.28z"/></svg>
+</a>
+
+<script src="products-data.js"></script>
+<script>
+  var menuBtn = document.getElementById('menu-btn');
+  var mobileMenu = document.getElementById('mobile-menu');
+  menuBtn.addEventListener('click', function(){
+    var open = mobileMenu.classList.toggle('open');
+    menuBtn.setAttribute('aria-expanded', open);
+    menuBtn.setAttribute('aria-label', open ? 'Close menu' : 'Open menu');
+    mobileMenu.setAttribute('aria-hidden', !open);
+  });
+  document.addEventListener('keydown', function(event){
+    if (event.key === 'Escape' && mobileMenu.classList.contains('open')){
+      mobileMenu.classList.remove('open');
+      mobileMenu.setAttribute('aria-hidden', 'true');
+      menuBtn.setAttribute('aria-expanded', 'false');
+      menuBtn.setAttribute('aria-label', 'Open menu');
+      menuBtn.focus();
+    }
+  });
+  mobileMenu.querySelectorAll('a').forEach(function(a){
+    a.addEventListener('click', function(){
+      mobileMenu.classList.remove('open');
+      mobileMenu.setAttribute('aria-hidden', 'true');
+      menuBtn.setAttribute('aria-expanded', 'false');
+      menuBtn.setAttribute('aria-label', 'Open menu');
+    });
+  });
+
+  function renderShopGrid(){
+    var grid = document.getElementById('shop-grid');
+    var frag = document.createDocumentFragment();
+
+    QLASSIQUE_PRODUCTS.forEach(function(product, i){
+      var card = document.createElement('article');
+      card.className = 'shop-card reveal' + (i % 3 === 1 ? ' d1' : i % 3 === 2 ? ' d2' : '');
+
+      var shotClass = 'shop-shot' + (product.category === 'Wellness' ? ' cat-wellness' : '');
+      var shotHtml;
+      if (product.image){
+        shotHtml = '<img src="' + product.image + '" alt="' + product.name + '" loading="lazy" decoding="async" />';
+      } else {
+        shotHtml = '<span class="placeholder-mark" aria-hidden="true">Q</span>';
+      }
+
+      var desc = product.shortDescription ? product.shortDescription : 'Product description coming soon.';
+      var sizeHtml = product.size ? '<p class="shop-size">' + product.size + '</p>' : '';
+
+      card.innerHTML =
+        '<div class="' + shotClass + '">' + shotHtml + '</div>' +
+        '<div class="shop-info">' +
+          '<p class="shop-tag">' + product.category + '</p>' +
+          '<h3>' + product.name + '</h3>' +
+          sizeHtml +
+          '<p class="shop-price">' + qlFormatPrice(product) + '</p>' +
+          '<p class="shop-desc">' + desc + '</p>' +
+          '<div class="shop-actions">' +
+            '<a class="btn btn-outline btn-sm" href="product.html?slug=' + product.slug + '">View Product</a>' +
+            (qlHasStripeLink(product)
+              ? '<a class="btn btn-gold btn-sm" href="' + product.stripePaymentLink + '">Buy Now</a>'
+              : '<span class="btn btn-gold btn-sm is-disabled" aria-disabled="true">Coming Soon</span>') +
+          '</div>' +
+        '</div>';
+
+      frag.appendChild(card);
+    });
+
+    grid.appendChild(frag);
+
+    if ('IntersectionObserver' in window){
+      var observer = new IntersectionObserver(function(entries){
+        entries.forEach(function(e){ if (e.isIntersecting) e.target.classList.add('in'); });
+      }, { threshold:.14 });
+      grid.querySelectorAll('.reveal').forEach(function(el){ observer.observe(el); });
+    } else {
+      grid.querySelectorAll('.reveal').forEach(function(el){ el.classList.add('in'); });
+    }
+  }
+  renderShopGrid();
+</script>
+</body>
+</html>
