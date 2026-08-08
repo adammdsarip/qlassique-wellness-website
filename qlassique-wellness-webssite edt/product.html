@@ -91,6 +91,9 @@
   .pd-info-block + .pd-info-block{ margin-top:36px; }
   .pd-info-block h2{ font-size:1.3rem; color:var(--forest); }
   .pd-info-block p{ margin-top:12px; font-size:.92rem; line-height:1.8; font-weight:300; color:var(--ink); max-width:70ch; }
+  .pd-list{ list-style:none; margin-top:14px; display:flex; flex-direction:column; gap:10px; max-width:70ch; }
+  .pd-list li{ position:relative; padding-left:22px; font-size:.92rem; line-height:1.7; font-weight:300; color:var(--ink); }
+  .pd-list li::before{ content:'—'; position:absolute; left:0; color:var(--gold-2); }
 
   .pd-not-found{ text-align:center; padding-top:clamp(160px, 22vw, 220px); padding-bottom:120px; }
   .pd-not-found h1{ font-size:clamp(2rem, 4vw, 2.6rem); color:var(--forest); }
@@ -286,6 +289,13 @@
       buy.innerHTML = '<span class="btn btn-gold btn-full is-disabled" aria-disabled="true">Coming Soon</span>';
     }
 
+    function renderInfoValue(val){
+      if (Array.isArray(val)){
+        return '<ul class="pd-list">' + val.map(function(item){ return '<li>' + item + '</li>'; }).join('') + '</ul>';
+      }
+      return '<p>' + val + '</p>';
+    }
+
     var infoBlocks = [];
     if (product.description) infoBlocks.push(['Product Information', product.description]);
     if (product.direction) infoBlocks.push(['Direction', product.direction]);
@@ -294,7 +304,7 @@
     var info = document.getElementById('pd-info');
     if (infoBlocks.length){
       info.innerHTML = infoBlocks.map(function(block){
-        return '<div class="pd-info-block"><h2>' + block[0] + '</h2><p>' + block[1] + '</p></div>';
+        return '<div class="pd-info-block"><h2>' + block[0] + '</h2>' + renderInfoValue(block[1]) + '</div>';
       }).join('');
     }
   }
