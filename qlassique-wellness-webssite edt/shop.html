@@ -93,11 +93,10 @@
 
   .shop-card{ display:flex; flex-direction:column; background:var(--cream); border:1px solid rgba(28,61,51,.12); transition:transform .5s cubic-bezier(.22,1,.36,1), box-shadow .5s ease, border-color .5s ease; }
   @media (hover:hover){ .shop-card:hover{ transform:translateY(-6px); box-shadow:0 30px 60px -32px rgba(28,61,51,.32); border-color:rgba(28,61,51,.2); } }
-  .shop-shot{ position:relative; aspect-ratio:4/5; display:flex; align-items:center; justify-content:center; overflow:hidden; background:linear-gradient(150deg, #6E8B74 0%, #566F5C 100%); }
-  .shop-shot.cat-wellness{ background:linear-gradient(160deg, #1C3D33 0%, #16302A 70%, #12251F 100%); }
+  .shop-shot{ position:relative; aspect-ratio:4/5; display:flex; align-items:center; justify-content:center; overflow:hidden; background:var(--cream-2); }
   .shop-shot img{ width:100%; height:100%; object-fit:contain; padding:18px; transition:transform .8s cubic-bezier(.22,1,.36,1); }
   @media (hover:hover){ .shop-card:hover .shop-shot img{ transform:scale(1.04); } }
-  .shop-shot .placeholder-mark{ font-family:var(--serif); font-size:2.6rem; color:rgba(242,237,228,.5); }
+  .shop-shot .placeholder-mark{ font-family:var(--serif); font-size:2.6rem; color:var(--forest); opacity:.35; }
 
   .shop-info{ padding:24px clamp(20px,3vw,26px) 26px; display:flex; flex-direction:column; flex:1; gap:0; }
   .shop-tag{ font-size:.66rem; letter-spacing:.16em; text-transform:uppercase; color:var(--gold-2); }
