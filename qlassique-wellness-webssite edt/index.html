@@ -494,26 +494,7 @@
       <a href="#contact" class="btn btn-outline reveal">Ask about products</a>
     </div>
 
-    <div class="grid-3-flush">
-      <div class="p-card reveal">
-        <div class="art"><img class="media-img" src="product-digestive-balance.jpg" width="1122" height="1402" loading="lazy" decoding="async" alt="Digestive Balance wellness supplement" /></div>
-        <p class="tag">Digestive Health</p>
-        <h3>Digestive Balance</h3>
-        <p class="price">60 capsules · $58</p>
-      </div>
-      <div class="p-card reveal d1">
-        <div class="art"><img class="media-img" src="product-evening-restore.jpg" width="1122" height="1402" loading="lazy" decoding="async" alt="Evening Restore Drops wellness ritual" /></div>
-        <p class="tag">Sleep Well</p>
-        <h3>Evening Restore Drops</h3>
-        <p class="price">30ml · $64</p>
-      </div>
-      <div class="p-card reveal d2">
-        <div class="art"><img class="media-img" src="product-daily-vitality.jpg" width="1122" height="1402" loading="lazy" decoding="async" alt="Daily Vitality Complex wellness supplement" /></div>
-        <p class="tag">Energy</p>
-        <h3>Daily Vitality Complex</h3>
-        <p class="price">90 capsules · $72</p>
-      </div>
-    </div>
+    <div class="grid-3-flush" id="featured-products-grid"></div>
   </div>
 </section>
 
@@ -673,7 +654,32 @@
   <svg width="26" height="26" viewBox="0 0 24 24" fill="#F2EDE4"><path d="M12 2a10 10 0 00-8.6 15L2 22l5.2-1.4A10 10 0 1012 2zm5.6 14.3c-.24.68-1.4 1.3-1.9 1.35-.5.06-1.02.28-3.5-.73-2.94-1.2-4.8-4.2-4.95-4.4-.14-.2-1.18-1.57-1.18-3s.76-2.1 1.03-2.4c.26-.28.58-.35.77-.35h.55c.18 0 .43-.06.66.5.24.58.82 2 .9 2.14.06.14.1.3.02.5-.08.2-.12.3-.24.46-.12.16-.26.35-.37.47-.12.13-.25.27-.1.53.14.26.62 1.02 1.34 1.66.92.82 1.7 1.08 1.96 1.2.26.12.4.1.55-.06.15-.17.63-.73.8-.98.16-.25.33-.2.55-.12.22.08 1.4.66 1.64.78.24.12.4.18.46.28.06.1.06.6-.18 1.28z"/></svg>
 </a>
 
+<script src="products-data.js"></script>
 <script>
+  (function renderFeaturedProducts(){
+    var grid = document.getElementById('featured-products-grid');
+    var frag = document.createDocumentFragment();
+
+    QLASSIQUE_PRODUCTS.slice(0, 3).forEach(function(product, i){
+      var card = document.createElement('a');
+      card.className = 'p-card reveal' + (i === 1 ? ' d1' : i === 2 ? ' d2' : '');
+      card.href = 'product.html?slug=' + product.slug;
+      card.style.display = 'block';
+
+      var sizePrice = [product.size, qlFormatPrice(product)].filter(Boolean).join(' · ');
+
+      card.innerHTML =
+        '<div class="art"><img class="media-img" src="' + product.image + '" loading="lazy" decoding="async" alt="' + product.name + '" /></div>' +
+        '<p class="tag">' + product.category + '</p>' +
+        '<h3>' + product.name + '</h3>' +
+        '<p class="price">' + sizePrice + '</p>';
+
+      frag.appendChild(card);
+    });
+
+    grid.appendChild(frag);
+  })();
+
   var nav = document.getElementById('site-nav');
   window.addEventListener('scroll', function(){
     nav.classList.toggle('scrolled', window.scrollY > 40);
