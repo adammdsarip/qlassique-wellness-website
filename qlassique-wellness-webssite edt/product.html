@@ -7,7 +7,19 @@
 <meta id="meta-description" name="description" content="Shop considered wellness and skincare rituals from Qlassique Wellness." />
 <meta name="robots" content="index,follow" />
 <meta name="theme-color" content="#1C3D33" />
-<link rel="canonical" href="https://www.qlassiquewellness.com/product.html" />
+<meta name="application-name" content="Qlassique Wellness" />
+<link id="pd-canonical" rel="canonical" href="https://www.qlassiquewellness.com/product.html" />
+<meta id="og-type" property="og:type" content="product" />
+<meta property="og:site_name" content="Qlassique Wellness" />
+<meta id="og-title" property="og:title" content="Product — Qlassique Wellness" />
+<meta id="og-description" property="og:description" content="Shop considered wellness and skincare rituals from Qlassique Wellness." />
+<meta id="og-url" property="og:url" content="https://www.qlassiquewellness.com/product.html" />
+<meta id="og-image" property="og:image" content="https://www.qlassiquewellness.com/qlassique-hero-wellness.jpg" />
+<meta id="og-image-alt" property="og:image:alt" content="Qlassique Wellness product" />
+<meta name="twitter:card" content="summary_large_image" />
+<meta id="twitter-title" name="twitter:title" content="Product — Qlassique Wellness" />
+<meta id="twitter-description" name="twitter:description" content="Shop considered wellness and skincare rituals from Qlassique Wellness." />
+<meta id="twitter-image" name="twitter:image" content="https://www.qlassiquewellness.com/qlassique-hero-wellness.jpg" />
 <link rel="icon" href="favicon.png" type="image/png" />
 <link rel="apple-touch-icon" href="apple-touch-icon.png" />
 <link rel="manifest" href="site.webmanifest" />
@@ -259,10 +271,23 @@
     }
 
     document.getElementById('pd-content').hidden = false;
-    document.title = product.name + ' — Qlassique Wellness';
-    document.getElementById('page-title').textContent = product.name + ' — Qlassique Wellness';
+    var pageTitle = product.name + ' — Qlassique Wellness';
+    document.title = pageTitle;
+    document.getElementById('page-title').textContent = pageTitle;
     var metaDesc = product.shortDescription || ('Shop ' + product.name + ' from Qlassique Wellness.');
     document.getElementById('meta-description').setAttribute('content', metaDesc);
+
+    var canonicalUrl = 'https://www.qlassiquewellness.com/product.html?slug=' + product.slug;
+    var productImageUrl = product.image ? 'https://www.qlassiquewellness.com/' + product.image : 'https://www.qlassiquewellness.com/qlassique-hero-wellness.jpg';
+    document.getElementById('pd-canonical').setAttribute('href', canonicalUrl);
+    document.getElementById('og-title').setAttribute('content', pageTitle);
+    document.getElementById('og-description').setAttribute('content', metaDesc);
+    document.getElementById('og-url').setAttribute('content', canonicalUrl);
+    document.getElementById('og-image').setAttribute('content', productImageUrl);
+    document.getElementById('og-image-alt').setAttribute('content', product.name);
+    document.getElementById('twitter-title').setAttribute('content', pageTitle);
+    document.getElementById('twitter-description').setAttribute('content', metaDesc);
+    document.getElementById('twitter-image').setAttribute('content', productImageUrl);
 
     var shot = document.getElementById('pd-shot');
     shot.classList.toggle('cat-wellness', product.category === 'Wellness');
